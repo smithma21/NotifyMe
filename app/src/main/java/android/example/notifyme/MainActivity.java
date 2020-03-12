@@ -60,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         return new NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
                 .setContentTitle("You've been notified!")
                 .setContentText("This is your notification text.")
-                .setSmallIcon(R.drawable.ic_android_foreground);
+                .setSmallIcon(R.drawable.ic_android_foreground)
+                .setContentIntent(notificationPendingIntent)
+                .setAutoCancel(true)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setDefaults(NotificationCompat.DEFAULT_ALL);
     }
 }
